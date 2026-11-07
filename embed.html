@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Exercise demo</title>
+    <!-- The iPhone app runs from capacitor://localhost, which YouTube refuses to embed for
+         ("Video player configuration error"). The app frames this page instead, so the player
+         sits inside a real website. Only plain video ids and whole seconds are passed through. -->
+    <style>
+      html, body { margin: 0; height: 100%; background: #000; }
+      iframe { border: 0; width: 100%; height: 100%; display: block; }
+    </style>
+  </head>
+  <body>
+    <script>
+      const q = new URLSearchParams(location.search)
+      const v = q.get('v') || ''
+      if (/^[\w-]{11}$/.test(v)) {
+        const p = new URLSearchParams({ mute: '1', playsinline: '1', rel: '0', origin: location.origin })
+        for (const k of ['start', 'end']) if (/^\d{1,6}$/.test(q.get(k) || '')) p.set(k, q.get(k))
+        const f = document.createElement('iframe')
+        f.src = 'https://www.youtube-nocookie.com/embed/' + v + '?' + p
+        f.title = 'Exercise demo'
+        f.allow = 'encrypted-media; picture-in-picture; fullscreen'
+        f.allowFullscreen = true
+        f.referrerPolicy = 'strict-origin-when-cross-origin'
+        document.body.appendChild(f)
+      }
+    </script>
+  </body>
+</html>
