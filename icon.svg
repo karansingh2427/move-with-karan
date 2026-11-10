@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- K mover: a K that is also a person reaching and stepping. Sage, gold and copper from Karan's other sites. -->
+  <rect width="512" height="512" rx="112" fill="#3f4a33"/>
+  <g transform="translate(-33 8)"><g fill="none" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"><path d="M190 120 V400" stroke="#f7f3ea"/><path d="M190 290 L330 150" stroke="#d9a441"/><path d="M240 250 L340 400" stroke="#c08457"/></g><circle cx="372" cy="112" r="38" fill="#d9a441"/></g>
+</svg>
